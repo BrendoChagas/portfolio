@@ -225,6 +225,38 @@ main .sobre {
 	font-size: 0.9em;
 }
 
+/* Responsividade */
+
+@media (max-width: 992px) {
+	.section-cv img {
+		display: none;
+	}
+
+	/* .section-cv {
+		background-image: url(../img/img-secundaria.jpeg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	} */
+
+	header .navegacao-primaria {
+		display: none;
+	}
+
+	header i {
+		color: var(--cor-fontSec);
+		font-size: 3em;
+	}
+
+	.sobre img {
+		grid-column: 1/-1;
+		justify-self: center;
+	}
+
+	.sobre-conteudo {
+		grid-column: 1/-1;
+	}
+}
+
 /* KEYFRAMES */
 /* Animação aplicada ao conteudo referente a classe *.digitando* resultando num efeito de cursor piscando. */
 @keyframes pisca {

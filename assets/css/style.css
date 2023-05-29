@@ -232,11 +232,15 @@ main .sobre {
 		display: none;
 	}
 
-	/* .section-cv {
-		background-image: url(../img/img-secundaria.jpeg);
+	.section-cv {
+		background-image: url(../img/img-principal.jpeg);
 		background-repeat: no-repeat;
 		background-size: cover;
-	} */
+	} 
+
+	.section-cv div p{
+		text-shadow: 1px 1px var(--cor-principal);
+	}
 
 	header .navegacao-primaria {
 		display: none;

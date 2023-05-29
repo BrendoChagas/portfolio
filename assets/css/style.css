@@ -1,9 +1,15 @@
 @charset "UTF 8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 
 :root {
 	--cor-principal: #000;
-	--cor-fontPrinc: #;
+	--cor-secundaria: #111;
+	--cor-terciaria: #ff5d56;
+	--cor-fontPrinc: #fff;
+	--cor-fontSec: #f7f7f7;
+	--cor-fontTerc: #707070;
+	--cor-fontTitulo: #dc3545;
 }
 
 * {
@@ -15,6 +21,7 @@
 }
 
 body {
+	background-color: var(--cor-principal);
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -29,12 +36,12 @@ header {
 }
 
 h1 {
-	color: #dc3545;
+	color: var(--cor-fontTitulo);
 	font-size: 2.5em;
 }
 
 header span {
-	color: #fff;
+	color: var(--cor-fontPrinc);
 }
 
 header .navegacao-primaria {
@@ -45,7 +52,7 @@ header .navegacao-primaria {
 
 header .navegacao-primaria li a {
 	padding: 10px;
-	color: #fff;
+	color: var(--cor-fontPrinc);
 	font-size: 1.3em;
 }
 
@@ -59,7 +66,7 @@ header .navegacao-primaria li a {
 }
 
 .section-cv {
-	background-color: #000;
+	background-color: var(--cor-principal);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	justify-content: space-around;
@@ -78,20 +85,20 @@ header .navegacao-primaria li a {
 .section-cv div h2 {
 	font-family: "Poppins", sans-serif;
 	font-weight: 600;
-	color: #f7f7f7;
+	color: var(--cor-fontSec);
 }
 
 .section-cv div p {
 	font-family: "Poppins", sans-serif;
 	font-weight: 200;
-	color: #f7f7f7;
+	color: var(--cor-fontSec);
 }
 
 .section-cv div a {
 	justify-self: start;
-	color: #f7f7f7;
+	color: var(--cor-fontSec);
 	padding: 15px 40px;
-	border: 2px solid #fff;
+	border: 2px solid var(--cor-fontPrinc);
 	border-radius: 5px;
 }
 
@@ -99,10 +106,127 @@ header .navegacao-primaria li a {
 	width: 100%;
 }
 
-/* MAIN */
+/* MAIN - Sobre mim */
+
+main {
+	background-color: var(--cor-secundaria);
+}
+
+main .sobre {
+	margin-top: 60px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 30px;
+	justify-content: center;
+	padding: 40px;
+}
+
+.sobre-titulo {
+	margin: 30px 0;
+	grid-column: 1/-1;
+	text-align: center;
+	color: var(--cor-fontPrinc);
+}
+
+.sobre-titulo h1 {
+	font-size: 2.5em;
+	color: var(--cor-terciaria);
+	margin-bottom: 15px;
+	font-family: "Berkshire Swash", cursive;
+}
+
+.sobre-titulo p {
+	color: var(--cor-fontTerc);
+	font-size: 1.4em;
+	margin-bottom: 16px;
+	position: relative;
+}
+
+.sobre-titulo div {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+}
+
+.sobre-titulo span {
+	display: block;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background-color: var(--cor-fontTitulo);
+}
+
+.sobre img {
+	animation: ladoSecao 0.6s ease-in-out forwards;
+	cursor: pointer;
+	grid-row: 2;
+	max-width: 100%;
+	border-radius: 4px;
+	filter: blur(0);
+}
+
+.sobre img:hover {
+	transition: 0.5s ease-in;
+	filter: blur(1px);
+}
+
+.sobre-conteudo {
+	animation: sobeSecao 0.6s ease-in-out forwards;
+	grid-column: 2/-1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	color: var(--cor-fontTerc);
+}
+
+.sobre-texto {
+	display: grid;
+	grid-column: 1/-1;
+	grid-template-columns: 1fr 1fr;
+}
+
+.sobre-texto h1 {
+	font-size: 2.3em;
+	color: var(--cor-fontPrinc);
+	grid-column: 1/-1;
+}
+
+.sobre-texto h1::after {
+	background-color: var(--cor-terciaria);
+	height: 6px;
+	width: 60px;
+	margin: 20px 0;
+	content: "";
+	display: block;
+	border-radius: 5px;
+}
+
+.sobre-texto p {
+	font-size: 1.3em;
+	grid-row: 2;
+	grid-column: 1/-1;
+}
+
+.sobre-info {
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column: 1/-1;
+	gap: 15px;
+	align-items: center;
+}
+
+.sobre-info i {
+	color: var(--cor-fontTitulo);
+	padding-right: 15px;
+	font-size: 1.5em;
+}
+
+.sobre-info p {
+	font-size: 0.9em;
+}
 
 /* KEYFRAMES */
-/* Animação aplicada ao content referente a classe *.digitando* resultando num efeito de cursor piscando. */
+/* Animação aplicada ao conteudo referente a classe *.digitando* resultando num efeito de cursor piscando. */
 @keyframes pisca {
 	0%,
 	100% {
@@ -110,5 +234,26 @@ header .navegacao-primaria li a {
 	}
 	50% {
 		opacity: 0;
+	}
+}
+
+/*Animação aplicada ao conteudo referente a classe *.sobre-conteudo* */
+@keyframes sobeSecao {
+	from {
+		transition: 0.5s;
+		transform: translate3d(60px, 0, 0);
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes ladoSecao {
+	from {
+		transition: 0.5s;
+		transform: translate3d(-60px, 0, 0);
+	}
+	to {
+		transform: translate3d(0, 0, 0);
 	}
 }

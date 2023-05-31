@@ -1,4 +1,4 @@
-function escrevendoLetra(){
+function escrevendoLetra() {
 	function typeWrite(elemento) {
 		const textoArray = elemento.innerHTML.split("");
 		elemento.innerHTML = " ";
@@ -12,8 +12,10 @@ function escrevendoLetra(){
 	typeWrite(titulo);
 }
 
-const ativaMenu = document.querySelector('.fa-bars');
+const ativaMenu = document.querySelector(".fa-bars");
+const navMenu = document.querySelector("header .navegacao-primaria");
 
-ativaMenu.addEventListener('click', ()=>{
-	ativaMenu.classList.toggle('fa-x');
-})
+ativaMenu.addEventListener("click", () => {
+	ativaMenu.classList.toggle("fa-x");
+	navMenu.classList.toggle("ativado");
+});

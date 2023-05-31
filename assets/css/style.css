@@ -46,14 +46,31 @@ header span {
 
 header .navegacao-primaria {
 	display: flex;
-	gap: 10px;
+	gap: 30px;
 	align-items: center;
 }
 
 header .navegacao-primaria li a {
-	padding: 10px;
 	color: var(--cor-fontPrinc);
+	width: 0px;
+	height: 0px;
 	font-size: 1.3em;
+}
+
+header .navegacao-primaria li a::after {
+	content: "";
+	width: 0px;
+	height: 0px;
+	display: block;
+	border-bottom: 4px solid transparent;
+	transition: 0.9s;
+}
+
+header .navegacao-primaria li a:hover::after {
+	width: 100%;
+	height: 0px;
+	padding: 0px;
+	border-bottom: 4px solid var(--cor-fontTitulo);
 }
 
 /*DOWNLOAD CV*/
@@ -236,14 +253,34 @@ main .sobre {
 		background-image: url(../img/img-principal.jpeg);
 		background-repeat: no-repeat;
 		background-size: cover;
-	} 
+	}
 
-	.section-cv div p{
-		text-shadow: 1px 1px var(--cor-principal);
+	.section-cv div p {
+		text-shadow: 1px 1px white;
+	}
+
+	header {
+		justify-content: space-between;
+		padding: 30px 70px;
 	}
 
 	header .navegacao-primaria {
 		display: none;
+	}
+
+	header .navegacao-primaria.ativado {
+		background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+		position: absolute;
+		display: grid;
+		top: 80px;
+		color: white;
+		z-index: 5;
+		padding: 30px;
+		font-size: 1.6em;
+		font-weight: bold;
+		border-radius: 0 0 4px 4px;
+		right: 20px;
+		animation: sobeSecao 0.8s ease-in-out forwards;
 	}
 
 	header i {
@@ -293,3 +330,5 @@ main .sobre {
 		transform: translate3d(0, 0, 0);
 	}
 }
+
+/*Animação menu responsivo */
